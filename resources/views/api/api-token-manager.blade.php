@@ -18,18 +18,18 @@
                 <x-input-error for="name" class="mt-2" />
             </div>
 
-            {{-- <div class="col-span-6">
+            <div class="col-span-6">
                 <x-label for="permissions" value="{{ __('Permissions') }}" />
 
                 <div class="grid grid-cols-1 gap-4 mt-2 md:grid-cols-2">
                     @foreach ($permissions as $permission)
                         <label class="flex items-center">
-                            <x-checkbox wire:model.defer="createApiTokenForm.permissions" :value="$permission"/>
+                            <x-checkbox wire:model.defer="createApiTokenForm.permissions" :value="$permission" />
                             <span class="ml-2 text-sm text-gray-600">{{ $permission }}</span>
                         </label>
                     @endforeach
                 </div>
-            </div> --}}
+            </div>
         </x-slot>
 
         <x-slot name="actions">
@@ -123,12 +123,12 @@
 
         <x-slot name="content">
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-                {{-- @foreach ($permissions as $permission)
+                @foreach ($permissions as $permission)
                     <label class="flex items-center">
                         <x-checkbox wire:model.defer="updateApiTokenForm.permissions" :value="$permission" />
                         <span class="ml-2 text-sm text-gray-600">{{ $permission }}</span>
                     </label>
-                @endforeach --}}
+                @endforeach
             </div>
         </x-slot>
 

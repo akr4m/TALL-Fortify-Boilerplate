@@ -69,6 +69,18 @@ class ApiTokenManager extends Component
      */
     public $apiTokenIdBeingDeleted;
 
+    /**
+     * The permissions that exist within the application.
+     *
+     * @var array
+     */
+    public $permissions = [];
+
+    /**
+     * The default permissions that should be available to new entities.
+     *
+     * @var array
+     */
     public static $defaultPermissions = [
         'create',
         'read',
@@ -83,7 +95,7 @@ class ApiTokenManager extends Component
      */
     public function mount()
     {
-        $this->createApiTokenForm['permissions'] = static::$defaultPermissions;
+        $this->createApiTokenForm['permissions'] = $this->permissions = static::$defaultPermissions;
     }
 
     public static function validPermissions(array $permissions)
